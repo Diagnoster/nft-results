@@ -2,6 +2,7 @@ import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import appConfig from '../config.json';
 import { useRouter } from 'next/router';
 import React from 'react';
+import './styles.css';
 
 function Titulo(props) {
   const Tag = props.tag || 'h1';
@@ -18,19 +19,6 @@ function Titulo(props) {
     </>
   );
 }
-
-// Componente React
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-//             <h2>Discord - Alura Matrix</h2>
-//         </div>
-//     )
-// }
-// export default HomePage
 
 export default function PaginaInicial() {
   //const username = 'Diagnoster';
@@ -81,17 +69,6 @@ export default function PaginaInicial() {
             <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
               {appConfig.name}
             </Text>
-            
-           {/*} <input 
-              type="text"
-              value={username}
-              onChange={function Handler() {
-                console.log('Usuário digitou', event.target.value)
-                const valor = event.target.value;
-                // change variable
-                setUsername(valor);
-              }}
-            /> */}
 
            <TextField
               fullWidth
