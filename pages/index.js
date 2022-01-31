@@ -2,7 +2,6 @@ import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import appConfig from '../config.json';
 import { useRouter } from 'next/router';
 import React from 'react';
-import './styles.css';
 
 function Titulo(props) {
   const Tag = props.tag || 'h1';
@@ -27,29 +26,12 @@ export default function PaginaInicial() {
 
   return (
     <>
-      <Box
+      <Box className="background"
         styleSheet={{
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: appConfig.theme.colors.primary[500],
           backgroundImage: 'url(https://media.istockphoto.com/photos/gold-coins-picture-id165418688?k=20&m=165418688&s=612x612&w=0&h=Nw4eXeYtbwNPavfU55647mxSaZUldDlZ7CfYJSCLuXo=)',
-          backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
-        <Box
-          styleSheet={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: {
-              xs: 'column',
-              sm: 'row',
-            },
-            width: '100%', maxWidth: '700px',
-            borderRadius: '5px', padding: '32px', margin: '16px',
-            boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-            backgroundColor: appConfig.theme.colors.neutrals[700],
-          }}
-        >
+        <Box className="external-box">
           {/* Formulário */}
           <Box
             as="form"
@@ -104,21 +86,7 @@ export default function PaginaInicial() {
 
 
           {/* Photo Area */}
-          <Box
-            styleSheet={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              maxWidth: '200px',
-              padding: '16px',
-              backgroundColor: appConfig.theme.colors.neutrals[800],
-              border: '1px solid',
-              borderColor: appConfig.theme.colors.neutrals[999],
-              borderRadius: '10px',
-              flex: 1,
-              minHeight: '240px',
-            }}
-          >
+          <Box className='photo-box'>
             <Image
               styleSheet={{
                 borderRadius: '50%',
@@ -126,15 +94,7 @@ export default function PaginaInicial() {
               }}
               src={`https://github.com/${username}.png`}
             />
-            <Text
-              variant="body4"
-              styleSheet={{
-                color: appConfig.theme.colors.neutrals[200],
-                backgroundColor: appConfig.theme.colors.neutrals[900],
-                padding: '3px 10px',
-                borderRadius: '1000px'
-              }}
-            >
+            <Text className="photo-text" variant="body4">
               {username}
             </Text>
           </Box>
