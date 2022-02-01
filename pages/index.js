@@ -22,7 +22,7 @@ function Titulo(props) {
 export default function PaginaInicial() {
   //const username = 'Diagnoster';
   const roteamento = useRouter();
-  const [username, setUsername] = React.useState('James Rovel Barbosa');
+  const [username, setUsername] = React.useState('Diagnoster');
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function PaginaInicial() {
       >
         <Box className="external-box">
           {/* Formulário */}
-          <Box
+          <Box className="fields-box"
             as="form"
             onSubmit={function(infosDoEvento) {
               infosDoEvento.preventDefault(); // evitando refresh da página
@@ -42,13 +42,10 @@ export default function PaginaInicial() {
               
               //window.location.href = '/chat'; // outro maneira de trocar page
             }}
-            styleSheet={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
-            }}
+            styleSheet={{ width: { xs: '100%', sm: '50%' } }}
           >
             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-            <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+            <Text className="group-name" variant="body3">
               {appConfig.name}
             </Text>
 
@@ -70,7 +67,7 @@ export default function PaginaInicial() {
                 },
               }}
             /> 
-            <Button
+            <Button className="button-acess"
               type='submit'
               label='Entrar'
               fullWidth
@@ -79,7 +76,7 @@ export default function PaginaInicial() {
                 mainColor: appConfig.theme.colors.primary[500],
                 mainColorLight: appConfig.theme.colors.primary[400],
                 mainColorStrong: appConfig.theme.colors.primary[600],
-              }}
+              }} 
             />
           </Box>
           {/* Formulário */}

@@ -33,42 +33,14 @@ export default function ChatPage() {
     }
 
     return (
-        <Box
+        <Box className="background-chat"
             styleSheet={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                backgroundColor: appConfig.theme.colors.primary[500],
                 backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)`,
-                backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
-                color: appConfig.theme.colors.neutrals['000']
             }}
         >
-            <Box
-                styleSheet={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    flex: 1,
-                    boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-                    borderRadius: '5px',
-                    backgroundColor: appConfig.theme.colors.neutrals[700],
-                    height: '100%',
-                    maxWidth: '95%',
-                    maxHeight: '95vh',
-                    padding: '32px',
-                }}
-            >
+            <Box className="box-chat-external">
                 <Header />
-                <Box
-                    styleSheet={{
-                        position: 'relative',
-                        display: 'flex',
-                        flex: 1,
-                        height: '80%',
-                        backgroundColor: appConfig.theme.colors.neutrals[600],
-                        flexDirection: 'column',
-                        borderRadius: '5px',
-                        padding: '16px',
-                    }}
-                >
+                <Box className="box-chat">
                     <MessageList mensagens={listaDeMensagens} />
                     {/* {listaDeMensagens.map((mensagemAtual) => {
                         return (
@@ -77,14 +49,8 @@ export default function ChatPage() {
                             </li>
                         )
                     })} */}
-                    <Box
-                        as="form"
-                        styleSheet={{
-                            display: 'flex',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <TextField
+                    <Box as="form" >
+                        <TextField className="field-write"
                             value={mensagem}
                             onChange={(event) => {
                                 const valor = event.target.value;
@@ -98,16 +64,6 @@ export default function ChatPage() {
                             }}
                             placeholder="Insira sua mensagem aqui..."
                             type="textarea"
-                            styleSheet={{
-                                width: '100%',
-                                border: '0',
-                                resize: 'none',
-                                borderRadius: '5px',
-                                padding: '6px 8px',
-                                backgroundColor: appConfig.theme.colors.neutrals[800],
-                                marginRight: '12px',
-                                color: appConfig.theme.colors.neutrals[200],
-                            }}
                         />
                     </Box>
                 </Box>
@@ -180,11 +136,9 @@ function MessageList(props) {
                             <Text tag="strong">
                                 {mensagem.de}
                             </Text>
-                            <Text
+                            <Text className="date-field"
                                 styleSheet={{
-                                    fontSize: '10px',
-                                    marginLeft: '8px',
-                                    color: appConfig.theme.colors.neutrals[300],
+                                    fontSize: '10px'
                                 }}
                                 tag="span"
                             >
